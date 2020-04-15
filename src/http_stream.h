@@ -13,7 +13,16 @@ void send_json(detection *dets, int nboxes, int classes, char **names, long long
 #ifdef OPENCV
 void send_mjpeg(mat_cv* mat, int port, int timeout, int quality);
 
+int send_http_post_request(char *http_post_host, int server_port, const char *videosource,
+    detection *dets, int nboxes, int classes, char **names, long long int frame_id, int ext_output, int timeout);
+
 #endif  // OPENCV
+
+typedef void* custom_thread_t;
+typedef void* custom_attr_t;
+
+int custom_create_thread(custom_thread_t * tid, const custom_attr_t * attr, void *(*func) (void *), void *arg);
+int custom_join(custom_thread_t thread, void **value_ptr);
 
 #ifdef __cplusplus
 }
