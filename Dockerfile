@@ -1,6 +1,7 @@
 # https://www.learnopencv.com/install-opencv3-on-ubuntu/
 
-FROM ubuntu:18.04
+# FROM ubuntu:18.04
+FROM nvidia/cuda:10.2-devel
 
 ARG PYTHON_VERSION=3.7
 ARG OPENCV_VERSION=4.2.0
