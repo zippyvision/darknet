@@ -16,6 +16,7 @@ grasp/
 images/
 opencv/
 convnet/
+ddz_data/
 decaf/
 submission/
 cfg/
