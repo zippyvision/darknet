@@ -126,9 +126,9 @@ RUN mkdir /tempx &&\
 
 
 
-# Call default command.
-RUN python --version && \
-    python -c "import cv2 ; print(cv2.__version__)"
+# # Call default command.
+# RUN python --version && \
+#     python -c "import cv2 ; print(cv2.__version__)"
 
 COPY . /app
 
