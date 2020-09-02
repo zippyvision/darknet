@@ -1,12 +1,11 @@
 # https://www.learnopencv.com/install-opencv3-on-ubuntu/
 
 # FROM ubuntu:18.04
-# FROM nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
 
 # FROM nvidia/cuda:10.2-base
 
-ARG PYTHON_VERSION=3.8
+ARG PYTHON_VERSION=3.7
 ARG OPENCV_VERSION=4.2.0
 ARG PYBIND_VERSION=v.2.4.3
 
@@ -124,7 +123,8 @@ RUN mkdir /tempx &&\
     cd / &&\
     rm -rf /tempx
 
-
+# For some reason default python search path does not include site-packages (i.e. cv2 path)
+ENV PYTHONPATH=/usr/local/lib/python${PYTHON_VERSION}/site-packages
 
 # Call default command.
 RUN python --version && \
