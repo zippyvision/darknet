@@ -1,7 +1,7 @@
 # https://www.learnopencv.com/install-opencv3-on-ubuntu/
 
 # FROM ubuntu:18.04
-FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:11.1-cudnn8-devel-ubuntu18.04
 
 # FROM nvidia/cuda:10.2-base
 
